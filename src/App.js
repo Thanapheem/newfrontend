@@ -10,6 +10,7 @@ import home from './page/home';
 import AuthRoute from './component/AuthR';
 import uploadcattle from './page/uploadproduct/uploadcow';
 
+
 // redux&blbl
 import {Provider} from 'react-redux';
 import store from './redux/store'
