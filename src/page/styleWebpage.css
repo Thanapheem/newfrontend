@@ -1,0 +1,288 @@
+
+@font-face{
+    font-family: 'Kanit-Medium';
+    src: url('/font/Kanit-Medium.ttf');
+}
+@font-face{
+    font-family: 'Kanit-Light';
+    src: url('/font/Kanit-Light.ttf');
+}
+@font-face{
+    font-family: 'Kanit-Regular';
+    src: url('/font/Kanit-Regular.ttf');
+}
+@font-face{
+    font-family: 'Kanit-ExtraLight';
+    src: url('/font/Kanit-ExtraLight.ttf');
+}
+
+.pad{
+ margin-left: 10px;
+}
+.nav-item{
+    color: #E0E0E0;
+}
+.f1{
+    width: 500px;
+    margin: 40px;
+}
+.r1-style{
+   background-color: #003171;
+   color:#003171;
+
+}
+
+.r1-c1{
+    text-align: left;
+}
+
+.r1-c2{
+    text-align: right;
+}
+
+.r7{
+    text-align: right;
+    padding-left: 10px;
+}
+.r2{
+    height: 73px;
+}
+.r2-c1{
+    
+    color: #ffffff;
+    font-size: 20px;
+    font-family: 'Kanit-Light';
+    padding-top: 5px;
+
+}
+
+.r2{
+    background-color: #373E44;
+    height: 50px;
+}
+.r2-c4{
+   padding-top: 10px;
+    color: #000;
+    font-size: 22px;
+    font-family: 'Kanit-Light';
+}
+.r2-c1-t2
+{
+    color:#373E44;
+    font-size: 20px;
+    font-family: 'Kanit-Regular';
+}
+
+.r2-c2{
+    color: rgb(0, 0, 0);
+    text-align: right;
+    background-color:#373E44;
+    font-size: 20px;
+    padding-top: 5px;
+    padding-right: 15px;
+   
+}
+.r4-pad{
+    padding-top: 5px;
+}
+
+.r8{
+    padding-top: 5px;
+    height: 287px;
+    padding-top: 5px;
+}
+.box-bg{
+    background-color: #F3F3F3;
+    width: 623px;
+    height: 360px;
+    margin: 5px;
+}
+
+.box-bg2{
+    background-color: #F3F3F3;
+    width: 450px;
+    height: 450px;
+    margin: 5px;
+    font-family: 'Kanit-Light';
+   
+}
+.box-bg3{
+    background-color: #ffffff;
+    width: 623px;
+    height: 360px;
+    margin: 5px;
+    font-family: 'Kanit-Light';
+   
+}
+.box-bg:hover{
+    background-color: rgba(219, 219, 219, 0.829);
+    width: 623px;
+    height: 360px;
+    margin: 5px;
+}
+.img1-box{
+    width: 900px;
+    height: 350px;
+    margin: 5px;
+}
+
+.img4-box{
+    widows: 300px;
+    height: 287px;
+    padding-top: 5px;
+    
+}
+.img5-box{
+    widows: 300px;
+    height: 287px;
+    padding-top: 5px;
+}
+.img6-box{
+    widows: 300px;
+    height: 287px;
+    padding-top: 5px;
+}
+.img7-box{
+    widows: 300px;
+    height: 287px;
+    padding-top: 5px;
+}
+.footer-style{
+    color:#ffffff;
+    background-color: #040034;
+    margin-top:60px ;
+    font-family: "Kanit-ExtraLight";
+    font-size: 20px;
+}
+.footer-style2{
+    color:#ffffff;
+    background-color: #040034;
+    margin-top:1px ;
+    font-family: "Kanit-ExtraLight";
+    font-size: 20px;
+}
+
+.footer-padding{
+    padding:10px ;
+}
+.bg-img{
+    width:100%;
+}
+.box-style1{
+    font-size: 30px;
+    font-family: "Kanit-Medium";
+    color: #040034;
+}
+.box-style2{
+    font-size: 24px;
+    font-family: "Kanit-Light";
+    color: #0D047A;
+
+}
+
+
+   
+    .bg-box-log-color{
+        
+        background-color: #E0E0E0;
+        width: 480px;
+        height: 500px;
+        position: sticky;
+        left: 750px;
+        top: 250px;
+        margin-top: 180px;
+        
+        
+    }
+   .form-padding{
+    
+       padding: 20px;
+       
+   }
+
+   .form-padding-top{
+    
+    padding-top: 20px;
+}
+
+.bt {
+    background-color:#003171;
+    border-color: #ffffff;  
+}
+
+ .bt:visited {
+    background-color:rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);  
+}
+
+.bt:hover {
+    background-color:rgb(255, 255, 255);
+    border-color: rgb(255, 254, 254);  
+}
+
+.bt:active {
+    background-color:rgb(255, 255, 255);
+    border-color: rgb(255, 254, 254);  
+}
+
+ .bt:focus{
+    background-color:rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);  
+}
+
+.bt:not(:disabled):not(.disabled):active,
+.bt:not(:disabled):not(.disabled).active,
+.show>.bt.dropdown-toggle {
+
+    background-color: #E0E0E0;
+    border-color:  #E0E0E0;
+}
+
+.title1{
+    font-size: 40px;
+    font-family: "Kanit-ExtraLight";
+    color:#000657 ;
+    text-align: center;
+    padding-top:55px ;
+  
+}
+
+.form-regis{
+border: #707070;
+width: 0px;
+height: 0px;
+}
+
+.title-regis{
+    font-family: "Kanit-Light";
+    font-size: 26px;
+    text-align: center;
+    color:#000657 ;
+}
+
+.button-text{
+    font-family: "Kanit-Regular";
+}
+
+.button-w{
+    width: 186px;
+    text-align: center;
+}
+
+.boxImgFrom{
+   padding-top:50px ;
+   
+}
+
+.button-w2{
+    width: 300px;
+
+}
+
+.size-font{
+    color:#ffffff;
+    font-family: "Kanit-ExtraLight";
+    font-size: 28px;
+    height: 10px;
+
+}
