@@ -121,7 +121,7 @@ class navbar extends Component {
                                                 <Link to="/manage/product">
                                                 <div>จัดการผลิตภัณฑ์จากโค</div>
                                                 </Link>
-                                                <Link to="/mange/accessories">
+                                                <Link to="/mange/access">
                                                 <div>จัดการสินค้าเบ็ดเตล็ด</div>
                                                 </Link>
                                             </div>

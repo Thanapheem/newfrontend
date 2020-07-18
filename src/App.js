@@ -9,6 +9,10 @@ import signup from './page/user/sigup';
 import home from './page/home';
 import AuthRoute from './component/AuthR';
 import uploadcattle from './page/uploadproduct/uploadcow';
+import managesale from './page/mangeproduct/managesale';
+import mangeauction from './page/mangeproduct/manageauction';
+import mangeproduct from './page/mangeproduct/manageproduct';
+import manageaccess from './page/mangeproduct/manageaccess';
 
 
 // redux&blbl
@@ -48,7 +52,11 @@ import jwt from 'jwt-decode';
                 <AuthRoute exact path = "/signup" component= {signup} />
                 <Route exact path = '/uploadsalecow' component ={uploadcattle}/>
                 <Route exact path = '/home' component = {home} />
-              </Switch>
+                <Route path = "/manage/salecattle" component = {managesale}/>
+                <Route path = "/manage/auction" component = {mangeauction}/>
+                <Route path = "/manage/product" component = {mangeproduct}/>
+                <Route path = "/mange/access" component = {manageaccess}/>
+                </Switch>
 
              </div>
             </Router>
