@@ -4,6 +4,13 @@ import Navbar from '../../component/navbar'
 import propt from 'prop-types'
 import withstyles from '@material-ui/core/styles/withStyles';
 import { Grid,  TextField, Button, CircularProgress, Card, CardHeader, CardContent, } from '@material-ui/core'
+import AddPhotoAlternateIcon from '@material-ui/icons/AddPhotoAlternate';
+import MovieIcon from '@material-ui/icons/Movie';
+import TableRow from '@material-ui/core/TableRow';
+import TableCell from '@material-ui/core/TableCell';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import Table from '@material-ui/core/Table';
 
 //redux
 import {upCow} from '../../redux/Action/dataAct';
@@ -19,6 +26,8 @@ const style ={
     card : {
         marginTop : 70,
         textAlign : "left"
+        
+        
     },
     labe : {
        
@@ -26,7 +35,7 @@ const style ={
         textAlign : "right"
     },
     formc : {
-        minWidth : 580
+        minWidth : 800
     },
     Button : {
         margin : '10px auto 10px auto',
@@ -83,12 +92,32 @@ class UploadCow extends Component{
             <div container   className = {classes.form}>
             <Navbar/> 
             <form noValidate onSubmit= {this.handleSubmit } >
-            <Card className = {classes.card}>
-                <CardHeader title ="ลงทะเบียนสมาชิก"/>
+            <Card className = {classes.card} >
+                <CardHeader title ="ลงทะเบียนโคขายมีชีวิต"/>
                 <Grid container spacing = {2}>
                     <Grid item xs = {6}>
                       <Card className = {classes.card1}>
-                          <CardHeader title ="ข้อมูลส่วนตัว"/>
+                      <Grid style={{backgroundColor:"#ffffff",height:"160px", marginTop:"18px",marginLeft:"10px",marginRight:"15"}} >
+                                <p  style={{color:"red",marginLeft:"5px" }}>อัพโหลดรูปภาพ 4 รูป ประกอบด้วย ด้านหน้า หลัง ซ้ายและขวา ขนาดรูปภาพไม่เกิน100MB</p>
+                                <div style={{marginLeft:"10px" ,marginTop:"20px" }}> <h8> 
+                                    <Button variant="contained" 
+                                     color="primary"
+                                     size="small"
+                                     style={{outline:"none"}}
+                                    startIcon={<AddPhotoAlternateIcon/>}
+                                >
+                                    เลือกรูปภาพ 0/4
+                                     </Button></h8></div>    
+                                        <div style={{marginLeft:"10px" ,marginTop:"20px" }}> <h8> <Button variant="contained" 
+                                     color="primary"
+                                     size="small"
+                                     style={{outline:"none"}}
+                                    startIcon={<MovieIcon/>}
+                                >
+                                    เลือกวีดีโอ
+                                     </Button></h8></div>
+                                        </Grid>
+                                        <hr width="100%" color="#F5F5F5"></hr>
                           <CardContent container className = {classes.content}>
                                   <Grid container spacing = {3}>
                                       <Grid item xs = {3} className = {classes.labe}>
@@ -230,9 +259,141 @@ class UploadCow extends Component{
                       </Card>
                     </Grid>
                     <Grid item xs ={6}>
-                        <h2>dasd</h2>
+                    
+                    <div className="col-12" style={{backgroundColor:"#F2F2F2",}}> 
+                    <div className='row  '> 
+                    <div className="col-6"> <div className="row container-fluid "> *ข้อมูลการผสมพันธุ์<Fab color="primary" aria-label="add" size="small "   style={{marginLeft:"380px"}}>
+                                                                     <AddIcon />
+                                                                 </Fab>
+                            </div> </div>
+                                </div>
+                              <Grid>
+                              <TableRow >
+                                        <TableCell align="left">ลำดับ</TableCell>
+                                        <TableCell align="center">วันที่ทำการผสมพันธุ์</TableCell>
+                                        <TableCell align="center">ชื่อพ่อพันธุ์/น้ำเชื้อที่ใช้</TableCell>
+                                        <TableCell align="center">ประเภทการผสมพันธุ์</TableCell>
+                                        <TableCell align="center">ท้องที่(ครั้งที่ตั้งท้อง)</TableCell>
+                                        <TableCell align="center">จัดการ</TableCell>
+                                        <hr></hr>
+                                    </TableRow>
+                                    <center><p  style={{color:"red",marginTop:"10px" }}>ไม่มีข้อมูล</p></center>
+                            
+                            </Grid>  
+                        </div>
+
+                        <div className="col-12" style={{backgroundColor:"#F2F2F2", marginTop:"10px"}}> 
+                            <div className='row  '> 
+                            <div className="col-6"> <div className="row container-fluid  "style={{marginTop:"12px"}}> *ข้อมูลการทำวัคซีน<Fab color="primary" aria-label="add" size="small "   style={{marginLeft:"380px"}}>
+                                                                     <AddIcon />
+                                                                 </Fab>
+                            </div> </div>
+                                </div>
+                              <Grid>
+                                  <Table>
+                              <TableRow className="col-12">
+                                        <TableCell align="left">ลำดับ</TableCell>
+                                        <TableCell align="center">วันที่ทำวัคซีน</TableCell>
+                                        <TableCell align="center">ชุดการผลิต</TableCell>
+                                        <TableCell align="center">ชนิดวัคซีน</TableCell>
+                                        <TableCell align="center">ผู้ดำเนินการทำวัคซีน</TableCell>
+                                        <TableCell align="center">จัดการ</TableCell>
+                                        <hr></hr>
+                                    </TableRow>
+                                    <center><p  style={{color:"red",marginTop:"10px" }}>ไม่มีข้อมูล</p></center>
+                            </Table>
+                            </Grid>  
+                        </div>
+
+                        <div className="col-12" style={{backgroundColor:"#ffffff", marginTop:"10px"}}> 
+                            <div className='row  '> 
+                            <div className="col-6"> <div className="row container-fluid  "style={{marginTop:"12px"}}> *ข้อมูลการรักษา
+                            </div> </div>
+                                <div className="col-6 text-right "><Fab color="primary" aria-label="add" size="small " style={{ }}>
+                                                                     <AddIcon />
+                                                                 </Fab></div></div>
+                              <Grid>
+                              <Table>
+                              <TableRow >
+                                        <TableCell align="left">ลำดับ</TableCell>
+                                        <TableCell align="center">วันที่รักษา</TableCell>
+                                        <TableCell align="center">วิธีการรักษา</TableCell>
+                                        <TableCell align="center">ยาที่ใช้รักษา</TableCell>
+                                        <TableCell align="center">ผู้รักษา</TableCell>
+                                        <TableCell align="center">จัดการ</TableCell>
+                                        <hr></hr>
+                                    </TableRow>
+                                    <center><p  style={{color:"red",marginTop:"10px" }}>ไม่มีข้อมูล</p></center>
+                            </Table>
+                            </Grid>  
+                        </div>
+                        <div className="col-12" style={{backgroundColor:"#ffffff", marginTop:"10px"}}> 
+                            <div className='row  '> 
+                            <div className="col-6"> <div className="row container-fluid  "style={{marginTop:"12px"}}> *ข้อมูลการทดสอบโรค
+                            </div> </div>
+                                <div className="col-6 text-right "><Fab color="primary" aria-label="add" size="small " style={{ }}>
+                                                                     <AddIcon />
+                                                                 </Fab></div></div>
+                              <Grid>
+                              <Table>
+                              <TableRow >
+                                        <TableCell align="left">ลำดับ</TableCell>
+                                        <TableCell align="center">วันที่ทำการทดสอบ</TableCell>
+                                        <TableCell align="center">ชื่อโรค</TableCell>
+                                        <TableCell align="center">ผลการทดสอบ</TableCell>
+                                        <TableCell align="center">จัดการ</TableCell>
+                                        <hr></hr>
+                                    </TableRow>
+                                    <center><p  style={{color:"red",marginTop:"10px" }}>ไม่มีข้อมูล</p></center>
+                            </Table>
+                            </Grid>  
+                        </div>
+                        <div className="col-12" style={{backgroundColor:"#ffffff", marginTop:"10px"}}> 
+                            <div className='row  '> 
+                            <div className="col-6"> <div className="row container-fluid  "style={{marginTop:"12px"}}> *ข้อมูลการถ่ายพยาธิ
+                            </div> </div>
+                                <div className="col-6 text-right "><Fab color="primary" aria-label="add" size="small " style={{ }}>
+                                                                     <AddIcon />
+                                                                 </Fab></div></div>
+                              <Grid>
+                              <Table>
+                              <TableRow >
+                                        <TableCell align="left">ลำดับ</TableCell>
+                                        <TableCell align="center">วันที่ทำถ่ายพยาธิ</TableCell>
+                                        <TableCell align="center">ชื่อยาถ่ายพยาธิ</TableCell>
+                                        <TableCell align="center">ผู้ดำเนินการ</TableCell>
+                                        <TableCell align="center">จัดการ</TableCell>
+                                        <hr></hr>
+                                    </TableRow>
+                                    <center><p  style={{color:"red",marginTop:"10px" }}>ไม่มีข้อมูล</p></center>
+                            </Table>
+                            </Grid>  
+                        </div>
+                        <div className="col-12" style={{backgroundColor:"#ffffff", marginTop:"10px"}}> 
+                            <div className='row  '> 
+                            <div className="col-6"> <div className="row container-fluid  "style={{marginTop:"12px"}}> *ข้อมูลการได้รับรางวัล
+                            </div> </div>
+                                <div className="col-6 text-right "><Fab color="primary" aria-label="add" size="small " style={{ }}>
+                                                                     <AddIcon />
+                                                                 </Fab></div></div>
+                              <Grid>
+                              <Table>
+                              <TableRow >
+                                        <TableCell align="left">ลำดับ</TableCell>
+                                        <TableCell align="center">ประเภทการจัดกิจกรรม</TableCell>
+                                        <TableCell align="center">ผู้จัดกิจกรรม</TableCell>
+                                        <TableCell align="center">รางวัลที่ได้</TableCell>
+                                        <TableCell align="center">จัดการ</TableCell>
+                                        <hr></hr>
+                                    </TableRow>
+                                    <center><p  style={{color:"red",marginTop:"10px" }}>ไม่มีข้อมูล</p></center>
+                                </Table>
+                            </Grid>  
+                        </div>
+                       
                     </Grid>
                 </Grid>
+                
 
             </Card>
               <Grid container item xs = {12}>
