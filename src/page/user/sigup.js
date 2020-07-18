@@ -3,11 +3,11 @@ import React ,{Component} from 'react'
 import Navbar from '../../component/navbar'
 import propt from 'prop-types'
 import withstyles from '@material-ui/core/styles/withStyles';
-import { Grid, Typography, TextField, Button, CircularProgress, Card, CardHeader, CardContent, Paper, ThemeProvider, FormControl, Select, MenuItem } from '@material-ui/core'
-import {spacing,position} from '@material-ui/system'
-import { MuiPickersUtilsProvider ,KeyboardDatePicker} from '@material-ui/pickers'
+import { Grid,  TextField, Button, CircularProgress, Card, CardHeader, CardContent, } from '@material-ui/core'
+import {connect} from 'react-redux'
+import {sigupuser} from '../../redux/Action/userAct'
 //
-import axios from 'axios';
+
 
 
 const style ={
@@ -74,21 +74,7 @@ class signup extends Component{
           address : this.state.address,
           birthdate : this.state.birthdate
         };
-        axios.post('/signup',newUser)
-        .then(res=>{
-          console.log(res.data);
-          localStorage.setItem('FBidToken',`Bearer ${res.data.token}`);
-          this.setState({
-            loading : false
-          });
-          this.props.history.push('/home');
-        })
-        .catch(err=>{
-          this.setState({
-            errors : err.response.data,
-            loading :false
-          })
-        })
+        this.props.sigupuser(newUser,this.props.history);
       };
       handleChange = (event) => {
         this.setState({
@@ -337,6 +323,13 @@ class signup extends Component{
     }
 }
 signup.propt = {
-    classes:propt.object.isRequired
+    classes:propt.object.isRequired,
+    user : propt.object.isRequired,
+    UI : propt.object.isRequired,
+    sigupuser : propt.object.isRequired
 }
-export default withstyles(style)(signup);
+const mapState = (state) =>({
+    user : state.user,
+    UI : state.UI
+})
+export default connect(mapState,{sigupuser})(withstyles(style)(signup));

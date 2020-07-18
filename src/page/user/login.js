@@ -5,8 +5,11 @@ import propt from 'prop-types'
 import withstyles from '@material-ui/core/styles/withStyles';
 import { Grid, Typography, TextField, Button, CircularProgress } from '@material-ui/core'
 //
-import axios from 'axios';
+
 import { Link } from 'react-router-dom';
+
+import {connect} from 'react-redux'
+import {loginuser} from  '../../redux/Action/userAct';
 const style= {
     form : {
         textAlign :'center',
@@ -35,7 +38,6 @@ class login extends Component{
         this.state = {
             email : '',
             password : '',
-            loading : false,
             errors: {}
         } 
     }
@@ -46,33 +48,17 @@ class login extends Component{
     }
     handleSubmit= (event) =>{
         event.preventDefault();
-        this.setState({
-            loading : true
-        });
+       
         const userData = {
             email : this.state.email,
             password : this.state.password
         }
-        axios
-        .post('/login',userData)
-        .then((res)=>{
-            console.log(res.data);
-            localStorage.setItem('FBidToken',`Bearer ${res.data.token}`); 
-            this.setState({
-                loading: false
-            });
-            this.props.history.push('/');
-        })
-        .catch(err=>{
-            this.setState({
-                errors : err.response.data,
-                loading :false
-            })
-        })
+        this.props.loginuser(userData,this.props.history)
+    
     }
     render(){
-        const {classes} = this.props
-        const {errors,loading} = this.state;
+        const {classes,UI:{loading}} = this.props
+        const {errors} = this.state;
         return(
             <Grid container className = {classes.form}> 
              <Navbar/>
@@ -136,6 +122,16 @@ class login extends Component{
     }
 }
 login.propt = {
-    classes : propt.object.isRequired
+    classes : propt.object.isRequired,
+    loginuser : propt.func.isRequired,
+    user :propt.object.isRequired,
+    UI : propt.object.isRequired
 }
-export default withstyles(style)(login);
+const mapState = (state)=>({
+    user : state.user,
+    UI :state.UI
+})
+const mapAction ={
+    loginuser
+}
+export default connect(mapState,mapAction)(withstyles(style)(login));
