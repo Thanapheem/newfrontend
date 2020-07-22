@@ -16,7 +16,7 @@ import AssignmentIcon from '@material-ui/icons/Assignment';
 import {upCow} from '../../redux/Action/dataAct';
 import {connect} from 'react-redux'
 
-
+//หน้าที่ก๊อปหน้าลงทะเบียนโคมายังไม่ได้เเก้ หลังบ้านเลย 
 
 const style ={
     form : {
@@ -48,7 +48,7 @@ const style ={
     }
    
 }
-class UploadCow extends Component{
+class Uploadauction extends Component{
     state = {
         name : '',
         detail : '',
@@ -95,7 +95,7 @@ class UploadCow extends Component{
             <Navbar/> 
             <form noValidate onSubmit= {this.handleSubmit } >
             <Card className = {classes.card} >
-                <CardHeader title ="ลงทะเบียนโคขายมีชีวิต"/>
+                <CardHeader title ="ลงทะเบียนโคประมูลมีชีวิต"/>
                 <Grid container spacing = {2}>
                     <Grid item xs = {6}>
                       <Card className = {classes.card1}>
@@ -332,14 +332,33 @@ class UploadCow extends Component{
                                   </Grid>
                                   <Grid container spacing = {3}>
                                       <Grid item xs = {3} className = {classes.labe}>
-                                          <label >ราคา </label>
+                                          <label >ระยะเวลาเริ่มต้นประมูล/ปิดประมูล </label>
                                       </Grid>
                                       <Grid item xs = {8}>
                                       <TextField 
                                           id = "age"
                                           name = "age"
                                           type = "age"
-                                          label = "ราคา/บาท "
+                                          label = "เริ่มต้นประมูล/ปิดประมูล "
+                                          variant = "outlined"
+                                          className = {classes.textt}
+                                          value = {this.state.age}
+                                          onChange = {this.handleChange}
+                                          helperText= {errors.age}
+                                          errors={errors.age ? true : false}
+                                          fullWidth/>
+                                      </Grid>
+                                  </Grid>
+                                  <Grid container spacing = {3}>
+                                      <Grid item xs = {3} className = {classes.labe}>
+                                          <label >ราคาต่อ1บิต</label>
+                                      </Grid>
+                                      <Grid item xs = {8}>
+                                      <TextField 
+                                          id = "age"
+                                          name = "age"
+                                          type = "age"
+                                          label = "ราคาต่อ1บิต"
                                           variant = "outlined"
                                           className = {classes.textt}
                                           value = {this.state.age}
@@ -525,11 +544,11 @@ class UploadCow extends Component{
         )
     }
 }
-UploadCow.propt = {
+Uploadauction.propt = {
     UploadCow : propt.func.isRequired,
     UI : propt.object.isRequired
 }
 const mapState = (state) =>({
     UI : state.UI
 })
-export default connect(mapState,{upCow})(withstyles(style)(UploadCow));
+export default connect(mapState,{upCow})(withstyles(style)(Uploadauction));

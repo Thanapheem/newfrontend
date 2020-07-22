@@ -71,11 +71,11 @@ class UploadAcc extends Component{
             <Navbar/> 
             <form noValidate onSubmit= {this.handleSubmit } >
             <Card className = {classes.card}>
-                <CardHeader title ="ลงทะเบียนสมาชิก"/>
+                <CardHeader title ="ลงทะเบียนขายสินค้าเบ็ดเตล็ด"/>
                 <Grid container spacing = {2}>
                     <Grid item xs = {6}>
                       <Card className = {classes.card1}>
-                          <CardHeader title ="ข้อมูลส่วนตัว"/>
+                          <CardHeader title ="ข้อมูลสินค้า"/>
                           <CardContent container className = {classes.content}>
                                   <Grid container spacing = {3}>
                                       <Grid item xs = {3} className = {classes.labe}>
@@ -155,14 +155,14 @@ class UploadAcc extends Component{
                                   </Grid>
                                   <Grid container spacing = {3}>
                                       <Grid item xs = {3} className = {classes.labe}>
-                                          <label >เพศโค</label>
+                                          <label >ราคา</label>
                                       </Grid>
                                       <Grid item xs = {8}>
                                       <TextField 
                                           id = "Weight"
                                           name = "Weight"
                                           type = "Weight"
-                                          label = "ประเภทโค"
+                                          label = "ราคา"
                                           variant = "outlined"
                                           className = {classes.textt}
                                           value = {this.state.Weight}
@@ -191,6 +191,82 @@ class UploadAcc extends Component{
                                           fullWidth/>
                                       </Grid>
                                   </Grid>
+                                  <Grid container spacing = {3}>
+                                      <Grid item xs = {3} className = {classes.labe}>
+                                          <label >เนื้อสัตว์อนามัย</label>
+                                      </Grid>
+                                      <Grid item xs = {8}>
+                                      <TextField 
+                                          id = "detail"
+                                          name = "detail"
+                                          type = "detail"
+                                          label = "ไม่มี"
+                                          variant = "outlined"
+                                          className = {classes.textt}
+                                          value = {this.state.detail}
+                                          onChange = {this.handleChange}
+                                          helperText= {errors.detail}
+                                          errors={errors.detail ? true : false}
+                                          fullWidth/>
+                                      </Grid>
+                                  </Grid>
+                                  <Grid container spacing = {3}>
+                                      <Grid item xs = {3} className = {classes.labe}>
+                                          <label >ปศุสัตว์ OK</label>
+                                      </Grid>
+                                      <Grid item xs = {8}>
+                                      <TextField 
+                                          id = "detail"
+                                          name = "detail"
+                                          type = "detail"
+                                          label = "ไม่มี"
+                                          variant = "outlined"
+                                          className = {classes.textt}
+                                          value = {this.state.detail}
+                                          onChange = {this.handleChange}
+                                          helperText= {errors.detail}
+                                          errors={errors.detail ? true : false}
+                                          fullWidth/>
+                                      </Grid>
+                                  </Grid>
+                                  <Grid container spacing = {3}>
+                                      <Grid item xs = {3} className = {classes.labe}>
+                                          <label >อย.</label>
+                                      </Grid>
+                                      <Grid item xs = {8}>
+                                      <TextField 
+                                          id = "detail"
+                                          name = "detail"
+                                          type = "detail"
+                                          label = "ไม่มี"
+                                          variant = "outlined"
+                                          className = {classes.textt}
+                                          value = {this.state.detail}
+                                          onChange = {this.handleChange}
+                                          helperText= {errors.detail}
+                                          errors={errors.detail ? true : false}
+                                          fullWidth/>
+                                      </Grid>
+                                  </Grid>
+                                  <Grid container spacing = {3}>
+                                      <Grid item xs = {3} className = {classes.labe}>
+                                          <label >ฮาลาน</label>
+                                      </Grid>
+                                      <Grid item xs = {8}>
+                                      <TextField 
+                                          id = "detail"
+                                          name = "detail"
+                                          type = "detail"
+                                          label = "ไม่มี"
+                                          variant = "outlined"
+                                          className = {classes.textt}
+                                          value = {this.state.detail}
+                                          onChange = {this.handleChange}
+                                          helperText= {errors.detail}
+                                          errors={errors.detail ? true : false}
+                                          fullWidth/>
+                                      </Grid>
+                                  </Grid>
                                   
                                   
                              
@@ -198,7 +274,44 @@ class UploadAcc extends Component{
                       </Card>
                     </Grid>
                     <Grid item xs ={6}>
-                        <h2>dasd</h2>
+                    
+                        
+                        <div className="col-12" style={{backgroundColor:"#F2F2F2", }}> 
+                           <div className='row  '> 
+                           <div className="col-6"> ข้อมูลพื้นฐานของผู้ผลิต
+                            </div>
+                               <div className="col-6 text-right "></div></div>
+                             <Grid>
+                             <div style={{ marginLeft:"20px"}}><h4>ชื่อเกษตกร :</h4></div> 
+                             <div style={{ marginLeft:"20px"}}><h4>นามสกุล :</h4></div> 
+                             <div style={{ marginLeft:"20px"}}><h4>หมายเลขบัตรประชาชน :</h4></div> 
+                             <div style={{ marginLeft:"20px"}}><h4>เบอร์โทรติดต่อ :</h4></div> 
+                             <div style={{ marginLeft:"20px"}}><h4>ที่อยู่ตามสำเนาทะเบียนบ้าน :</h4></div>
+                             <div style={{ marginLeft:"20px"}}><h4> ตำบล :</h4></div>
+                             <div style={{ marginLeft:"20px"}}><h4>อำเภอ :</h4></div>
+                             <div style={{ marginLeft:"20px"}}><h4>จังหวัด  :</h4></div>
+                             
+                           
+                           </Grid>  
+                       </div>
+
+                       <div className="col-12" style={{backgroundColor:"#F2F2F2", marginTop:"18px",height:"380px"}}> 
+                           <div className='row  '> 
+                           <div className="col-6"> <div className="row container-fluid  "style={{marginTop:"12px"}}> ข้อมูลฟาร์ม
+                           </div> </div>
+                               <div className="col-6 text-right "></div></div>
+                             <Grid>
+                             <div style={{ marginLeft:"20px"}}><h4>ชื่อฟาร์ม/ชื่อสถานที่ผลิต :</h4></div> 
+                             <div style={{ marginLeft:"20px"}}><h4>วัตถุประสงค์ในการเลี้ยงโค :</h4></div> 
+                             <div style={{ marginLeft:"20px"}}><h4>ที่ตั้งฟาร์ม/สถานที่ผลิต :</h4></div> 
+                             <div style={{ marginLeft:"20px"}}><h4>ละติจุด :</h4></div> 
+                             <div style={{ marginLeft:"20px"}}><h4>ลองติจุด:</h4></div>
+                             
+                             
+                           
+                           </Grid>  
+                       </div>  
+                       
                     </Grid>
                 </Grid>
 

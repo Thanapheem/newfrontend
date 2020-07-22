@@ -73,8 +73,8 @@ class navbar extends Component {
      render(){
         const {authenticated} = this.props;
          return(
-             <Appbar>
-                    <Toolbar className = "nav=container">
+             <Appbar >
+                    <Toolbar className = "nav=container" style={{marginTop:"5px"}}>
                     {authenticated ? (
                         
                              <nav className="row">
@@ -97,7 +97,7 @@ class navbar extends Component {
                                         <Link to="/uploadsalecow">
                                         <div>ลงทะเบียนขายโคมีชีวิต</div>
                                         </Link>
-                                        <Link to="/induction">
+                                        <Link to="/uploadauction">
                                         <div>ลงทะเบียนโคประมูลมีชีวิต</div>
                                         </Link>
                                         <Link to="/uploadproduct">
@@ -194,7 +194,7 @@ class navbar extends Component {
                                     
                                     </div>
                                     <div style ={{float:"right"}} >
-                                        <Badge badgeContent={4} color="secondary" size="Large "style={{ marginTop:"10px",marginRight:"20px"}}>
+                                        <Badge badgeContent={1} color="secondary" size="Large "style={{ marginTop:"10px",marginRight:"20px"}}>
                                         <MailIcon style={{ color: lightBlue[50] }} />
                                     </Badge>
 

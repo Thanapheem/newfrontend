@@ -10,6 +10,7 @@ import home from './page/home';
 import AuthRoute from './component/AuthR';
 //หน้าอัพโหลด
 import uploadcattle from './page/uploadproduct/uploadcow';
+import uploadauction from './page/uploadproduct/uploadauction';
 import uploadacc from './page/uploadproduct/uploadacc';
 import uploadprd from './page/uploadproduct/uploadproduct';
 //หน้าจัดการสินค้า
@@ -17,6 +18,10 @@ import managesale from './page/mangeproduct/managesale';
 import mangeauction from './page/mangeproduct/manageauction';
 import mangeproduct from './page/mangeproduct/manageproduct';
 import manageaccess from './page/mangeproduct/manageaccess';
+
+//หน้าเสนอซื้อสินค้า 
+import offerbuy from './page/offerofbuy/offerbuy';
+
 
 
 
@@ -63,10 +68,14 @@ import uploadproduct from './page/uploadproduct/uploadproduct';
                 <Route exact path = '/uploadaccessorries' component = {uploadacc}/>
                 <Route exact path = '/uploadsalecow' component ={uploadcattle}/>
                 <Route exact path = '/uploadproduct' component = {uploadproduct}/>
+                <Route exact path = '/uploadauction' component = {uploadauction}/>
+                //หน้าจัดการ
                 <Route path = "/manage/salecattle" component = {managesale}/>
                 <Route path = "/manage/auction" component = {mangeauction}/>
                 <Route path = "/manage/product" component = {mangeproduct}/>
                 <Route path = "/mange/access" component = {manageaccess}/>
+                //หน้าเสนอซื้อสินค้า
+                <Route path = "/offer/offerbuy" component = {offerbuy}/>
              
                 
               </Switch>

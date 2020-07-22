@@ -6,7 +6,7 @@ import withstyles from '@material-ui/core/styles/withStyles';
 import { Grid,  TextField, Button, CircularProgress, Card, CardHeader, CardContent, } from '@material-ui/core'
 
 //redux
-import {UpPRD} from '../../redux/Action/dataAct';
+import {UpACC} from '../../redux/Action/dataAct';
 import {connect} from 'react-redux'
 
 
@@ -35,15 +35,14 @@ const style ={
     }
    
 }
-class UploadPRD extends Component{
+class Uploadproduct extends Component{
     state = {
-        prdname : '',
-        prdtype : '',
-        prddate : '',
-        expdate : '',
-        prdweight : '',
-        prdamount : '',
-        prddetail : '',
+        aName : '',
+        acctype : '',
+        adate : '',
+        detail : '',
+        Weight : '',
+        amount : '',
         errors : {}
     }
     handleChange = (event) => {
@@ -51,14 +50,13 @@ class UploadPRD extends Component{
     }
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.UpPRD({
-            prdname : this.state.prdname,
-            prdtype : this.state.prdtype,
-            prddate : this.state.prddate,
-            expdate : this.state.expdate,
-            prddetail : this.state.prddetail,
-            prdweight : this.state.prdweight,
-            prdamount : this.state.prdamount
+        this.props.UpACC({
+            aName : this.state.aName,
+            acctype : this.state.acctype,
+            adate : this.state.adate,
+            detail : this.state.detail,
+            Weight : this.state.Weight,
+            amount : this.state.amount
 
         })
        
@@ -73,11 +71,11 @@ class UploadPRD extends Component{
             <Navbar/> 
             <form noValidate onSubmit= {this.handleSubmit } >
             <Card className = {classes.card}>
-                <CardHeader title ="ลงทะเบียนสมาชิก"/>
+                <CardHeader title ="ลงทะเบียนขายผลิคภัณฑ์จากโค"/>
                 <Grid container spacing = {2}>
                     <Grid item xs = {6}>
                       <Card className = {classes.card1}>
-                          <CardHeader title ="ข้อมูลส่วนตัว"/>
+                          <CardHeader title ="ข้อมูลสินค้า"/>
                           <CardContent container className = {classes.content}>
                                   <Grid container spacing = {3}>
                                       <Grid item xs = {3} className = {classes.labe}>
@@ -85,16 +83,16 @@ class UploadPRD extends Component{
                                       </Grid>
                                       <Grid item xs = {8}>
                                       <TextField 
-                                          id = "prdname"
-                                          name = "prdname"
-                                          type = "prdname"
+                                          id = "aName"
+                                          name = "aName"
+                                          type = "aName"
                                           label = "ชื่อผลิตภัณฑ์"
                                           variant = "outlined"
                                           className = {classes.textt}
-                                          value = {this.state.prdname}
+                                          value = {this.state.aName}
                                           onChange = {this.handleChange}
-                                          helperText= {errors.prdname}
-                                          errors={errors.prdname ? true : false}
+                                          helperText= {errors.aName}
+                                          errors={errors.aName ? true : false}
                                           fullWidth/>
                                       </Grid>
                                   </Grid>
@@ -104,35 +102,35 @@ class UploadPRD extends Component{
                                       </Grid>
                                       <Grid item xs = {8}>
                                       <TextField 
-                                          id = "prdtype"
-                                          name = "prdtype"
-                                          type = "prdtype"
+                                          id = "acctype"
+                                          name = "acctype"
+                                          type = "acctype"
                                           label = "ชนิดผลิตภัณฑ์"
                                           variant = "outlined"
                                           className = {classes.textt}
-                                          value = {this.state.prdtype}
+                                          value = {this.state.acctype}
                                           onChange = {this.handleChange}
-                                          helperText= {errors.prdtype}            
-                                          errors={errors.prdtype ? true : false}
+                                          helperText= {errors.acctype}            
+                                          errors={errors.acctype ? true : false}
                                           fullWidth/>
                                       </Grid>
                                   </Grid>
                                   <Grid container spacing = {3}>
                                       <Grid item xs = {3} className = {classes.labe}>
-                                          <label >วันที่ผลิต</label>
+                                          <label >วันที่ผลิต/หมดอายุ</label>
                                       </Grid>
                                       <Grid item xs = {8}>
                                       <TextField 
-                                          id = "prddate"
-                                          name = "prddate"
-                                          type = "prddate"
-                                          label = "วันที่ผลิต"
+                                          id = "adate"
+                                          name = "adate"
+                                          type = "adate"
+                                          label = "วันที่ผลิต/หมดอายุ"
                                           variant = "outlined"
                                           className = {classes.textt}
-                                          value = {this.state.prddate}
+                                          value = {this.state.adate}
                                           onChange = {this.handleChange}
-                                          helperText= {errors.prddate}
-                                          errors={errors.prddate ? true : false}
+                                          helperText= {errors.adate}
+                                          errors={errors.adate ? true : false}
                                           fullWidth/>
                                       </Grid>
                                   </Grid>
@@ -142,35 +140,35 @@ class UploadPRD extends Component{
                                       </Grid>
                                       <Grid item xs = {8}>
                                       <TextField 
-                                          id = "prdamount"
-                                          name = "prdamount"
-                                          type = "prdamount"
+                                          id = "amount"
+                                          name = "amount"
+                                          type = "amount"
                                           label = "จำนวน"
                                           variant = "outlined"
                                           className = {classes.textt}
-                                          value = {this.state.prdamount}
+                                          value = {this.state.amount}
                                           onChange = {this.handleChange}
-                                          helperText= {errors.prdamount}
-                                          errors={errors.prdamount ? true : false}
+                                          helperText= {errors.amount}
+                                          errors={errors.amount ? true : false}
                                           fullWidth/>
                                       </Grid>
                                   </Grid>
                                   <Grid container spacing = {3}>
                                       <Grid item xs = {3} className = {classes.labe}>
-                                          <label >เพศโค</label>
+                                          <label >ราคา</label>
                                       </Grid>
                                       <Grid item xs = {8}>
                                       <TextField 
-                                          id = "prdweight"
-                                          name = "prdweight"
-                                          type = "prdweight"
-                                          label = "ประเภทโค"
+                                          id = "Weight"
+                                          name = "Weight"
+                                          type = "Weight"
+                                          label = "ราคา"
                                           variant = "outlined"
                                           className = {classes.textt}
-                                          value = {this.state.prdweight}
+                                          value = {this.state.Weight}
                                           onChange = {this.handleChange}
-                                          helperText= {errors.prdweight}
-                                          errors={errors.prdweight? true : false}
+                                          helperText= {errors.Weight}
+                                          errors={errors.Weight? true : false}
                                           fullWidth/>
                                       </Grid>
                                   </Grid>
@@ -180,16 +178,92 @@ class UploadPRD extends Component{
                                       </Grid>
                                       <Grid item xs = {8}>
                                       <TextField 
-                                          id = "prddetail"
-                                          name = "prddetail"
-                                          type = "prddetail"
+                                          id = "detail"
+                                          name = "detail"
+                                          type = "detail"
                                           label = "สายพันธุ์โค"
                                           variant = "outlined"
                                           className = {classes.textt}
-                                          value = {this.state.prddetail}
+                                          value = {this.state.detail}
                                           onChange = {this.handleChange}
-                                          helperText= {errors.prddetail}
-                                          errors={errors.prddetail ? true : false}
+                                          helperText= {errors.detail}
+                                          errors={errors.detail ? true : false}
+                                          fullWidth/>
+                                      </Grid>
+                                  </Grid>
+                                  <Grid container spacing = {3}>
+                                      <Grid item xs = {3} className = {classes.labe}>
+                                          <label >เนื้อสัตว์อนามัย</label>
+                                      </Grid>
+                                      <Grid item xs = {8}>
+                                      <TextField 
+                                          id = "detail"
+                                          name = "detail"
+                                          type = "detail"
+                                          label = "ไม่มี"
+                                          variant = "outlined"
+                                          className = {classes.textt}
+                                          value = {this.state.detail}
+                                          onChange = {this.handleChange}
+                                          helperText= {errors.detail}
+                                          errors={errors.detail ? true : false}
+                                          fullWidth/>
+                                      </Grid>
+                                  </Grid>
+                                  <Grid container spacing = {3}>
+                                      <Grid item xs = {3} className = {classes.labe}>
+                                          <label >ปศุสัตว์ OK</label>
+                                      </Grid>
+                                      <Grid item xs = {8}>
+                                      <TextField 
+                                          id = "detail"
+                                          name = "detail"
+                                          type = "detail"
+                                          label = "ไม่มี"
+                                          variant = "outlined"
+                                          className = {classes.textt}
+                                          value = {this.state.detail}
+                                          onChange = {this.handleChange}
+                                          helperText= {errors.detail}
+                                          errors={errors.detail ? true : false}
+                                          fullWidth/>
+                                      </Grid>
+                                  </Grid>
+                                  <Grid container spacing = {3}>
+                                      <Grid item xs = {3} className = {classes.labe}>
+                                          <label >อย.</label>
+                                      </Grid>
+                                      <Grid item xs = {8}>
+                                      <TextField 
+                                          id = "detail"
+                                          name = "detail"
+                                          type = "detail"
+                                          label = "ไม่มี"
+                                          variant = "outlined"
+                                          className = {classes.textt}
+                                          value = {this.state.detail}
+                                          onChange = {this.handleChange}
+                                          helperText= {errors.detail}
+                                          errors={errors.detail ? true : false}
+                                          fullWidth/>
+                                      </Grid>
+                                  </Grid>
+                                  <Grid container spacing = {3}>
+                                      <Grid item xs = {3} className = {classes.labe}>
+                                          <label >ฮาลาน</label>
+                                      </Grid>
+                                      <Grid item xs = {8}>
+                                      <TextField 
+                                          id = "detail"
+                                          name = "detail"
+                                          type = "detail"
+                                          label = "ไม่มี"
+                                          variant = "outlined"
+                                          className = {classes.textt}
+                                          value = {this.state.detail}
+                                          onChange = {this.handleChange}
+                                          helperText= {errors.detail}
+                                          errors={errors.detail ? true : false}
                                           fullWidth/>
                                       </Grid>
                                   </Grid>
@@ -200,7 +274,44 @@ class UploadPRD extends Component{
                       </Card>
                     </Grid>
                     <Grid item xs ={6}>
-                        <h2>dasd</h2>
+                    
+                        
+                        <div className="col-12" style={{backgroundColor:"#F2F2F2", }}> 
+                           <div className='row  '> 
+                           <div className="col-6"> ข้อมูลพื้นฐานของผู้ผลิต
+                            </div>
+                               <div className="col-6 text-right "></div></div>
+                             <Grid>
+                             <div style={{ marginLeft:"20px"}}><h4>ชื่อเกษตกร :</h4></div> 
+                             <div style={{ marginLeft:"20px"}}><h4>นามสกุล :</h4></div> 
+                             <div style={{ marginLeft:"20px"}}><h4>หมายเลขบัตรประชาชน :</h4></div> 
+                             <div style={{ marginLeft:"20px"}}><h4>เบอร์โทรติดต่อ :</h4></div> 
+                             <div style={{ marginLeft:"20px"}}><h4>ที่อยู่ตามสำเนาทะเบียนบ้าน :</h4></div>
+                             <div style={{ marginLeft:"20px"}}><h4> ตำบล :</h4></div>
+                             <div style={{ marginLeft:"20px"}}><h4>อำเภอ :</h4></div>
+                             <div style={{ marginLeft:"20px"}}><h4>จังหวัด  :</h4></div>
+                             
+                           
+                           </Grid>  
+                       </div>
+
+                       <div className="col-12" style={{backgroundColor:"#F2F2F2", marginTop:"18px",height:"380px"}}> 
+                           <div className='row  '> 
+                           <div className="col-6"> <div className="row container-fluid  "style={{marginTop:"12px"}}> ข้อมูลฟาร์ม
+                           </div> </div>
+                               <div className="col-6 text-right "></div></div>
+                             <Grid>
+                             <div style={{ marginLeft:"20px"}}><h4>ชื่อฟาร์ม/ชื่อสถานที่ผลิต :</h4></div> 
+                             <div style={{ marginLeft:"20px"}}><h4>วัตถุประสงค์ในการเลี้ยงโค :</h4></div> 
+                             <div style={{ marginLeft:"20px"}}><h4>ที่ตั้งฟาร์ม/สถานที่ผลิต :</h4></div> 
+                             <div style={{ marginLeft:"20px"}}><h4>ละติจุด :</h4></div> 
+                             <div style={{ marginLeft:"20px"}}><h4>ลองติจุด:</h4></div>
+                             
+                             
+                           
+                           </Grid>  
+                       </div>  
+                       
                     </Grid>
                 </Grid>
 
@@ -221,11 +332,11 @@ class UploadPRD extends Component{
         )
     }
 }
-UploadPRD.propt = {
-    UploadPRD : propt.func.isRequired,
+Uploadproduct.propt = {
+    UploadAcc : propt.func.isRequired,
     UI : propt.object.isRequired
 }
 const mapState = (state) =>({
     UI : state.UI
 })
-export default connect(mapState,{UpPRD})(withstyles(style)(UploadPRD));
+export default connect(mapState,{UpACC})(withstyles(style)(Uploadproduct));

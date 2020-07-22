@@ -1,0 +1,36 @@
+.pad-l-20{
+   padding-left: 10px;
+}
+
+.text-header-ab{
+    margin: 0;
+    padding: 10px;
+    font-size:22px ;
+  background-color:#ff0000 ;
+    color: #fff;
+    border-radius:5px 5px 0 0 ;
+    
+}
+.textField-width{
+    width: 700px;
+ 
+}
+.pad-10{
+    padding: 5px;
+    padding-left: 10px;
+    
+}
+
+.textField-width2{
+    width: 110px;
+ 
+}
+
+.textField-width3{
+    width: 200px;
+ 
+}
+.textField-width5{
+    width: 150px;
+ 
+}
