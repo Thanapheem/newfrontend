@@ -20,7 +20,9 @@ import {connect} from 'react-redux'
 
 const style ={
     form : {
-        marginLeft : 20
+        marginLeft : 20,
+        minWidth : 700
+
 
     },
     card : {
@@ -34,9 +36,9 @@ const style ={
         marginTop : 20,
         textAlign : "right"
     },
-    formc : {
-        minWidth : 800
-    },
+
+  
+
     Button : {
         margin : '10px auto 10px auto',
         position : 'relative'
@@ -252,7 +254,6 @@ class UploadCow extends Component{
                                           fullWidth/>
                                       </Grid>
                                   </Grid>
-                                  
                                   
                              
                           </CardContent>

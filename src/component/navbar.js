@@ -19,6 +19,7 @@ import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 import MailIcon from '@material-ui/icons/Mail';
 import Avatar from '@material-ui/core/Avatar';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
+import {logout} from '../redux/Action/userAct'
 const StyledBadge = withStyles((theme) => ({
     badge: {
       backgroundColor: '#44b700',
@@ -66,7 +67,9 @@ const StyledBadge = withStyles((theme) => ({
   }));
   
 class navbar extends Component {
-   
+   handlelogout  = () =>{
+      this.props.logout();
+   }
      render(){
         const {authenticated} = this.props;
          return(
@@ -97,10 +100,10 @@ class navbar extends Component {
                                         <Link to="/induction">
                                         <div>ลงทะเบียนโคประมูลมีชีวิต</div>
                                         </Link>
-                                        <Link to="/upload/cattleproduct">
+                                        <Link to="/uploadproduct">
                                         <div>ลงทะเบียนขายผลิตภัณฑ์จากโค</div>
                                         </Link>
-                                        <Link to="/upload/accesscow">
+                                        <Link to="/uploadaccessorries">
                                         <div>ลงทะเบียนสินค้าเบ็ดเตล็ด</div>
                                         </Link>
                                         
@@ -170,7 +173,7 @@ class navbar extends Component {
                                     </div>
 
                                     <div className="dropdown">
-                                    <Link to="/calfmanage">
+                                    <Link>
                                         <div className="dropbtn"><Badge color="secondary" size="Large ">
                                                                 <SettingsIcon style={{ color: lightBlue[50] }} />
                                                             </Badge>ตั้งค่า</div>
@@ -182,7 +185,7 @@ class navbar extends Component {
                                                 <div>รายการรับเรื่อง</div>
                                                 </Link>
                                                 
-                                                <Link to="/login">
+                                                <Link onClick = {this.handlelogout}>
                                                 <div >ออกจากระบบ</div>
                                                 </Link>
                                             </div>
@@ -227,9 +230,11 @@ class navbar extends Component {
      }
  }
  navbar.propt = {
-     authenticated :propt.bool.isRequired
+     authenticated :propt.bool.isRequired,
+     logout :propt.func.isRequired
  };
  const mapstate = (state) =>({
      authenticated : state.user.authenticated
  })
- export default connect(mapstate)(navbar);
+ const mapaction = {logout};
+ export default connect(mapstate,mapaction)(navbar);

@@ -3,16 +3,23 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-//page
+//หน้าทั่วไป
 import login from './page/user/login';
 import signup from './page/user/sigup';
 import home from './page/home';
 import AuthRoute from './component/AuthR';
+//หน้าอัพโหลด
 import uploadcattle from './page/uploadproduct/uploadcow';
+import uploadacc from './page/uploadproduct/uploadacc';
+import uploadprd from './page/uploadproduct/uploadproduct';
+//หน้าจัดการสินค้า
 import managesale from './page/mangeproduct/managesale';
 import mangeauction from './page/mangeproduct/manageauction';
 import mangeproduct from './page/mangeproduct/manageproduct';
 import manageaccess from './page/mangeproduct/manageaccess';
+
+
+
 
 
 // redux&blbl
@@ -22,6 +29,7 @@ import {SET_AUTHENTICATED} from './redux/type';
 import {logout,getuser} from './redux/Action/userAct';
 import Axios from 'axios';
 import jwt from 'jwt-decode';
+import uploadproduct from './page/uploadproduct/uploadproduct';
     const token = localStorage.FBIdToken;
     if(token){
       const decodedToken = jwt(token)
@@ -49,14 +57,19 @@ import jwt from 'jwt-decode';
              <Switch>
                 <Route exact path = "/" component = {home}/>
                 <AuthRoute exact path = "/login" component={login} />
-                <AuthRoute exact path = "/signup" component= {signup} />
-                <Route exact path = '/uploadsalecow' component ={uploadcattle}/>
+                <AuthRoute exact path = "/signup" component= {signup} /> 
                 <Route exact path = '/home' component = {home} />
+                //หน้าอัพโหลด
+                <Route exact path = '/uploadaccessorries' component = {uploadacc}/>
+                <Route exact path = '/uploadsalecow' component ={uploadcattle}/>
+                <Route exact path = '/uploadproduct' component = {uploadproduct}/>
                 <Route path = "/manage/salecattle" component = {managesale}/>
                 <Route path = "/manage/auction" component = {mangeauction}/>
                 <Route path = "/manage/product" component = {mangeproduct}/>
                 <Route path = "/mange/access" component = {manageaccess}/>
-                </Switch>
+             
+                
+              </Switch>
 
              </div>
             </Router>

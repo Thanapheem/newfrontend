@@ -29,7 +29,12 @@ const style= {
     },
     spin : { 
         position : 'absolute'
-    }
+    },
+    customError: {
+        color: 'red',
+        fontSize: '0.8rem',
+        marginTop: 10
+      }
 }
 
 class login extends Component{
@@ -41,6 +46,11 @@ class login extends Component{
             errors: {}
         } 
     }
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.UI.errors) {
+          this.setState({ errors: nextProps.UI.errors });
+        }
+      }
     handleChange = (event) =>{
         this.setState({
             [event.target.name]: event.target.value

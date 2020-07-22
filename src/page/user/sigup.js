@@ -12,7 +12,8 @@ import {sigupuser} from '../../redux/Action/userAct'
 
 const style ={
     form : {
-        marginLeft : 20
+        marginLeft : 30,
+        minWidth : 700
 
     },
     card : {
@@ -24,9 +25,7 @@ const style ={
         marginTop : 20,
         textAlign : "right"
     },
-    formc : {
-        minWidth : 580
-    },
+   
     Button : {
         margin : '10px auto 10px auto',
         position : 'relative'
@@ -55,7 +54,11 @@ class signup extends Component{
             errors : {}      
         };
       }
-    
+      componentWillReceiveProps(nextProps) {
+        if (nextProps.UI.errors) {
+          this.setState({ errors: nextProps.UI.errors });
+        }
+      }
       handleSubmit = (event)=>{
         event.preventDefault();
         this.setState({
@@ -83,8 +86,8 @@ class signup extends Component{
       };
    
     render(){
-        const {classes} = this.props;
-        const {errors , loading } = this.state;
+        const {classes,UI:{loading}} = this.props
+        const {errors  } = this.state;
      
         return(
             <div container   className = {classes.form}>

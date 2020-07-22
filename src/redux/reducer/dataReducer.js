@@ -1,8 +1,12 @@
-import { UPLOAD_SCOW } from '../type';
+import { UPLOAD_SCOW, UPLOAD_ACC, UPLOAD_PRD } from '../type';
 
 const initialState = {
     cattles : [],
     cattle : {},
+    accessories : [],
+    access : {},
+    products : [],
+    product : {},
     loading : false
 };
 
@@ -14,6 +18,22 @@ export default function(state = initialState,action){
                 cattles : [
                     action.payload,
                     ...state.cattles
+                ]
+            }
+        case UPLOAD_ACC : 
+            return {
+                ...state,
+                accessories : [
+                    action.payload,
+                    ...state.accessories
+                ]
+            }
+        case UPLOAD_PRD : 
+            return {
+                ...state,
+                products : [
+                    action.payload,
+                    ...state.products
                 ]
             }
         default:

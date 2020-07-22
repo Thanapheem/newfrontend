@@ -10,3 +10,5 @@ export const LOADING_UI = "LOADING_UI"
 
 //Data
 export const UPLOAD_SCOW = "UPLOAD_SCOW"
+export const UPLOAD_ACC = "UPLOAD_ACC"
+export const UPLOAD_PRD = "UPLOAD_PRD"
